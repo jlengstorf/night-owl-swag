@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "night-owl-swag",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Jason Lengstorf <jason@lengstorf.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.2.2",
+    "stripe": "^8.79.0"
+  }
+}
