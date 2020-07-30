@@ -36,14 +36,20 @@
       }
 
       main {
-        align-items: center;
-        display: grid;
-        gap: 3rem;
-        grid-template-columns: 250px 1fr;
-        justify-content: center;
         margin: 2rem auto;
         max-width: 700px;
         width: 90vw;
+      }
+
+      h1 {
+        font-size: 9vw;
+        line-height: 1.1;
+        margin: 0;
+      }
+
+      h3,
+      p {
+        margin: 1rem 0 0;
       }
 
       button,
@@ -76,24 +82,71 @@
         padding: 0.5rem 1rem;
       }
 
+      .description {
+        grid-column: 1 / 3;
+      }
+
       .details {
-        display: grid;
-        gap: 3rem;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between;
         margin: 4rem auto;
         max-width: 700px;
+        text-align: center;
         width: 90vw;
+      }
+
+      .details h3 {
+        margin: 0 0 1rem;
+      }
+
+      footer {
+        margin: 8rem auto 4rem;
+        text-align: center;
+        width: 90vw;
+      }
+
+      footer img {
+        width: 25px;
+        vertical-align: middle;
+      }
+
+      @media (min-width: 600px) {
+        main {
+          align-items: center;
+          display: grid;
+          gap: 3rem;
+          grid-template-columns: 250px 1fr;
+          justify-content: center;
+        }
+
+        h1 {
+          font-size: 54px;
+        }
+
+        .details {
+          display: grid;
+          gap: 3rem;
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: space-between;
+        }
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>Buy Night Owl Swag</h1>
+      <h1>Love Night Owl?</h1>
+      <h3>
+        Buy Night Owl Swag to Rep Your Favorite Theme + Support a Good Cause!
+      </h3>
       <p>
-        Show your support for the best theme in the game with this limited
-        edition t-shirt. All proceeds go to
-        <a href="https://www.blackgirlscode.com/">Black Girls Code</a>.
+        Sarah Drasner’s
+        <a
+          href="https://marketplace.visualstudio.com/items?itemName=sdras.night-owl"
+          >Night Owl theme</a
+        >
+        has earned a well-deserved place in the hearts of developers everywhere.
+        Now you can show your support for a great them <em>and</em> help raise
+        money for
+        <a href="https://www.blackgirlscode.com/">Black Girls Code</a> with this
+        limited edition shirt!
       </p>
     </header>
 
@@ -147,18 +200,64 @@
 
         <button>Purchase</button>
       </form>
+
+      <div class="description">
+        <p>
+          Show your support for the best theme in the game with this limited
+          edition shirt. All proceeds go to
+          <a href="https://www.blackgirlscode.com/">Black Girls Code</a>, a
+          registered 501(c)3 organization.
+        </p>
+        <p>
+          <strong>PLEASE NOTE:</strong> These shirts are only on sale until
+          August 15th. To maximize donations, we will only print the shirts that
+          are ordered, so this is likely your only chance to order a Night Owl
+          shirt!
+        </p>
+      </div>
     </main>
 
     <aside class="details">
       <div class="sizing">
         <h3>Sizing for the Flowy Circle Top</h3>
         <img src="/images/8806-sizing.jpg" alt="Flowy Circle Top Sizing" />
+        <p>
+          Details:
+          <a
+            href="https://www.bellacanvas.com/product/8806/Womens-Flowy-Circle-Top.html"
+            >Bella+Canvas website</a
+          >
+        </p>
       </div>
+
       <div class="sizing">
         <h3>Sizing for the T-Shirt</h3>
         <img src="/images/3001-sizing.jpg" alt="T-Shirt Sizing" />
+        <p>
+          Details:
+          <a
+            href="https://www.bellacanvas.com/product/3001/Unisex-Jersey-Short-Sleeve-Tee.html"
+            >Bella+Canvas website</a
+          >
+        </p>
       </div>
     </aside>
+
+    <footer>
+      <p>
+        Created with
+        <img
+          src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1596146333/netlify/netliheart.png"
+          alt="love"
+        />
+        by the
+        <a
+          href="https://www.netlify.com/?utm_source=night-owl&utm_medium=footer-jl&utm_campaign=devex"
+          >Netlify</a
+        >
+        team.
+      </p>
+    </footer>
 
     <script src="https://js.stripe.com/v3/"></script>
     <script>
