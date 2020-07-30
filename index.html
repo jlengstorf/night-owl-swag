@@ -16,19 +16,219 @@
         background: #011627;
         color: #d6deeb;
         font-family: 'operator mono', monospace;
+        font-size: 16px;
+        line-height: 1.45;
       }
 
       a {
         color: #82aaff;
       }
+
+      img {
+        width: 100%;
+      }
+
+      header {
+        margin: 4rem auto 0;
+        max-width: 450px;
+        text-align: center;
+        width: 90vw;
+      }
+
+      main {
+        align-items: center;
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: 250px 1fr;
+        justify-content: center;
+        margin: 2rem auto;
+        max-width: 700px;
+        width: 90vw;
+      }
+
+      button,
+      input,
+      label,
+      select {
+        font-family: 'operator mono', monospace;
+        font-size: 16px;
+      }
+
+      input,
+      select {
+        border: 1px solid #637777;
+        border-radius: 0.25rem;
+        display: block;
+        line-height: 1.45;
+        margin: 0.25rem 0 1rem;
+        padding: 0.25rem 1rem;
+        width: 100%;
+      }
+
+      button {
+        background: #addb67;
+        border: 0;
+        border-radius: 0.25rem;
+        color: #011627;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-top: 0.5rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .details {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        margin: 4rem auto;
+        max-width: 700px;
+        width: 90vw;
+      }
     </style>
   </head>
   <body>
-    <h1>Buy Night Owl Swag</h1>
-    <p>
-      Show your support for the best theme in the game with this limited edition
-      t-shirt. All proceeds go to
-      <a href="https://www.blackgirlscode.com/">Black Girls Code</a>.
-    </p>
+    <header>
+      <h1>Buy Night Owl Swag</h1>
+      <p>
+        Show your support for the best theme in the game with this limited
+        edition t-shirt. All proceeds go to
+        <a href="https://www.blackgirlscode.com/">Black Girls Code</a>.
+      </p>
+    </header>
+
+    <main>
+      <div class="shirt">
+        <img src="/images/night-owl-shirt.jpg" alt="Night Owl Shirt Design" />
+      </div>
+
+      <form class="purchase">
+        <label for="price">Choose Your Contribution</label>
+        <select id="price" name="price">
+          <option value="" disabled selected>
+            -- choose your contribution --
+          </option>
+
+          <option value="price_1HA6ocJxiC8YsQIhJ613rWMi"
+            >Night Owl Shirt</option
+          >
+          <option value="price_1HA6odJxiC8YsQIh4KxoA4vN"
+            >Night Owl Shirt + Extra $25 Donation</option
+          >
+          <option value="price_1HA6odJxiC8YsQIhy3FKuTEX"
+            >Night Owl Shirt + Extra $75 Donation</option
+          >
+        </select>
+
+        <label for="price">Choose Your Size</label>
+        <select id="size" name="size">
+          <option value="" disabled selected> -- choose a size -- </option>
+
+          <option value="8806-sm">SM Flowy Circle Top</option>
+          <option value="8806-md">MD Flowy Circle Top</option>
+          <option value="8806-lg">LG Flowy Circle Top</option>
+          <option value="8806-xl">XL Flowy Circle Top</option>
+          <option value="8806-2x">2X Flowy Circle Top</option>
+
+          <option value="3001-xs">XS T-Shirt</option>
+          <option value="3001-sm">SM T-Shirt</option>
+          <option value="3001-md">MD T-Shirt</option>
+          <option value="3001-lg">LG T-Shirt</option>
+          <option value="3001-xl">XL T-Shirt</option>
+          <option value="3001-2x">2X T-Shirt</option>
+          <option value="3001-3x">3X T-Shirt</option>
+          <option value="3001-4x">4X T-Shirt</option>
+        </select>
+
+        <label for="quantity"
+          >How many shirts would you like to purchase?</label
+        >
+        <input type="number" id="quantity" name="quantity" value="1" />
+
+        <button>Purchase</button>
+      </form>
+    </main>
+
+    <aside class="details">
+      <div class="sizing">
+        <h3>Sizing for the Flowy Circle Top</h3>
+        <img src="/images/8806-sizing.jpg" alt="Flowy Circle Top Sizing" />
+      </div>
+      <div class="sizing">
+        <h3>Sizing for the T-Shirt</h3>
+        <img src="/images/3001-sizing.jpg" alt="T-Shirt Sizing" />
+      </div>
+    </aside>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      async function getStripeSession(orderDetails) {
+        const { sessionId, publishableKey } = await fetch(
+          '/.netlify/functions/create-checkout',
+          {
+            method: 'POST',
+            body: JSON.stringify(orderDetails),
+          },
+        ).then((response) => response.json());
+
+        const stripe = Stripe(publishableKey);
+
+        const { error } = stripe.redirectToCheckout({
+          sessionId,
+        });
+
+        if (error) {
+          console.error(error.message);
+        }
+      }
+
+      document.querySelector('#size').addEventListener('change', (event) => {
+        const size = event.target.value;
+
+        const image = size.match(/3001/)
+          ? {
+              src: 't-shirt',
+              alt: 'Bella+Canvas Unisex Jersey Short Sleeve Tee',
+            }
+          : { src: 'flowy-circle-top', alt: 'Bella+Canvas Flowy Circle Top' };
+
+        const img = document.querySelector('.shirt img');
+        img.src = `/images/${image.src}.jpg`;
+        img.alt = `${image.alt} with Night Owl logo`;
+      });
+
+      document
+        .querySelector('.purchase')
+        .addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          const form = new FormData(event.target);
+
+          const productName = document.querySelector(
+            `[value="${form.get('price')}"]`,
+          ).innerText;
+          const productSize = document.querySelector(
+            `[value="${form.get('size')}"]`,
+          ).innerText;
+
+          const orderDetails = {
+            price: form.get('price'),
+            size: form.get('size'),
+            description: `${productName} (${productSize})`,
+            quantity: form.get('quantity'),
+          };
+
+          if (
+            !orderDetails.price ||
+            !orderDetails.size ||
+            !orderDetails.quantity
+          ) {
+            console.error('must select a price, size, and quantity');
+            return;
+          }
+
+          getStripeSession(orderDetails);
+        });
+    </script>
   </body>
 </html>
