@@ -42,6 +42,7 @@ exports.handler = async ({ body }) => {
     ],
     metadata: {
       size,
+      quantity: validatedQuantity,
     },
     success_url: `${process.env.URL}/purchased`,
     cancel_url: `${process.env.URL}/`,

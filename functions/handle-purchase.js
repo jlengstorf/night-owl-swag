@@ -27,15 +27,14 @@ exports.handler = async ({ headers, body }) => {
       country,
     } = order.shipping.address;
 
-    const items = order.display_items;
-
     const msg = {
       to: process.env.FULFILLMENT_EMAIL_ADDRESS,
       from: 'support@learnwithjason.dev',
       subject: 'New pre-order for the Night Owl shirt',
       text: `
 Items:
-${items.map((item) => `- (${item.quantity}) ${item.custom.name}`).join('\n')}
+- ${order.metadata.quantity}x ${order.metadata.size} 
+
 Shipping Address:
 ${order.shipping.name}
 ${line1}${line2 !== null ? '\n' + line2 : ''}
