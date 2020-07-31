@@ -5,13 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buy Limited Edition Night Owl Swag & Support a Great Cause!</title>
 
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="prefetch" href="https://js.stripe.com/v3/" />
+    <link
+      rel="prefetch"
+      href="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1596231596/night-owl/night-owl-shirt-design.jpg"
+    />
+    <link
+      rel="prefetch"
+      href="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1596230607/night-owl/unisex-tee.jpg"
+    />
+    <link
+      rel="prefetch"
+      href="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1596230575/night-owl/womens-slim-fit-tee.jpg"
+    />
+    <link
+      rel="prefetch"
+      href="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1596146333/netlify/netliheart.png"
+    />
+
     <meta
       name="description"
       content="Sale ends August 15th! Show your love for the Night Owl code editor theme and support Black Girls Code by buying this limited edition shirt!"
     />
     <meta
       name="image"
-      content="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1596155261/night-owl/night-owl-share.jpg"
+      content="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/night-owl/night-owl-share.jpg"
     />
 
     <meta property="og:type" content="website" />
@@ -22,7 +41,7 @@
     />
     <meta
       property="og:image"
-      content="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1596155261/night-owl/night-owl-share.jpg"
+      content="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/night-owl/night-owl-share.jpg"
     />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -37,7 +56,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1596155261/night-owl/night-owl-share.jpg"
+      content="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/night-owl/night-owl-share.jpg"
     />
 
     <style>
@@ -86,6 +105,27 @@
       h3,
       p {
         margin: 1rem 0 0;
+      }
+
+      form {
+        position: relative;
+      }
+
+      form::after {
+        background: rgb(1 22 40);
+        content: '';
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        transition: opacity 200ms linear;
+        width: 100%;
+      }
+
+      .submitting::after {
+        opacity: 0.75;
       }
 
       button,
@@ -215,7 +255,10 @@
 
     <main>
       <div class="shirt">
-        <img src="/images/night-owl-shirt.jpg" alt="Night Owl Shirt Design" />
+        <img
+          src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1596231596/night-owl/night-owl-shirt-design.jpg"
+          alt="Night Owl Shirt Design"
+        />
       </div>
 
       <form class="purchase">
@@ -240,20 +283,20 @@
         <select id="size" name="size">
           <option value="" disabled selected> -- choose a size -- </option>
 
-          <option value="8806-sm">SM Flowy Circle Top</option>
-          <option value="8806-md">MD Flowy Circle Top</option>
-          <option value="8806-lg">LG Flowy Circle Top</option>
-          <option value="8806-xl">XL Flowy Circle Top</option>
-          <option value="8806-2x">2X Flowy Circle Top</option>
+          <option value="6004-sm">SM Women’s Slim Fit Tee</option>
+          <option value="6004-md">MD Women’s Slim Fit Tee</option>
+          <option value="6004-lg">LG Women’s Slim Fit Tee</option>
+          <option value="6004-xl">XL Women’s Slim Fit Tee</option>
+          <option value="6004-2x">2X Women’s Slim Fit Tee</option>
 
-          <option value="3001-xs">XS T-Shirt</option>
-          <option value="3001-sm">SM T-Shirt</option>
-          <option value="3001-md">MD T-Shirt</option>
-          <option value="3001-lg">LG T-Shirt</option>
-          <option value="3001-xl">XL T-Shirt</option>
-          <option value="3001-2x">2X T-Shirt</option>
-          <option value="3001-3x">3X T-Shirt</option>
-          <option value="3001-4x">4X T-Shirt</option>
+          <option value="3001-xs">XS Unisex T-Shirt</option>
+          <option value="3001-sm">SM Unisex T-Shirt</option>
+          <option value="3001-md">MD Unisex T-Shirt</option>
+          <option value="3001-lg">LG Unisex T-Shirt</option>
+          <option value="3001-xl">XL Unisex T-Shirt</option>
+          <option value="3001-2x">2X Unisex T-Shirt</option>
+          <option value="3001-3x">3X Unisex T-Shirt</option>
+          <option value="3001-4x">4X Unisex T-Shirt</option>
         </select>
 
         <label for="quantity"
@@ -282,7 +325,7 @@
 
     <aside class="details">
       <div class="sizing">
-        <h3>Sizing for the Flowy Circle Top</h3>
+        <h3>Sizing for the Women’s Slim Fit Tee</h3>
         <dl>
           <dt>Small (SM)</dt>
           <dd>Size 2–4</dd>
@@ -302,14 +345,14 @@
         <p>
           Product Details:
           <a
-            href="https://www.bellacanvas.com/product/8806/Womens-Flowy-Circle-Top.html"
+            href="https://www.bellacanvas.com/product/6004/Womens-Slim-Fit-Tee.html#pills-size"
             >Bella+Canvas website</a
           >
         </p>
       </div>
 
       <div class="sizing">
-        <h3>Sizing for the T-Shirt</h3>
+        <h3>Sizing for the Unisex T-Shirt</h3>
         <dl>
           <dt>Extra Small (XS)</dt>
           <dd>Chest 31"–34"</dd>
@@ -388,13 +431,18 @@
 
         const image = size.match(/3001/)
           ? {
-              src: 't-shirt',
+              src:
+                'https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1596230607/night-owl/unisex-tee.jpg',
               alt: 'Bella+Canvas Unisex Jersey Short Sleeve Tee',
             }
-          : { src: 'flowy-circle-top', alt: 'Bella+Canvas Flowy Circle Top' };
+          : {
+              src:
+                'https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1596230575/night-owl/womens-slim-fit-tee.jpg',
+              alt: 'Bella+Canvas Women’s Slim Fit Tee',
+            };
 
         const img = document.querySelector('.shirt img');
-        img.src = `/images/${image.src}.jpg`;
+        img.src = image.src;
         img.alt = `${image.alt} with Night Owl logo`;
       });
 
@@ -402,6 +450,12 @@
         .querySelector('.purchase')
         .addEventListener('submit', (event) => {
           event.preventDefault();
+
+          event.target.classList.add('submitting');
+          const btn = event.target.querySelector('button');
+
+          btn.disabled = 'disabled';
+          btn.innerText = 'Submitting...';
 
           const form = new FormData(event.target);
 
