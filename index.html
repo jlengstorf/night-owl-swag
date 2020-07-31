@@ -66,7 +66,7 @@
 
       header {
         margin: 4rem auto 0;
-        max-width: 450px;
+        max-width: 480px;
         text-align: center;
         width: 90vw;
       }
@@ -133,7 +133,34 @@
         margin: 0 0 1rem;
       }
 
+      .details p {
+        font-size: 0.75rem;
+      }
+
+      dl {
+        display: grid;
+        gap: 0.75rem 1rem;
+        grid-template-columns: minmax(150px, max-content) minmax(120px, 1fr);
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+      }
+
+      dt,
+      dd {
+        margin: 0;
+      }
+
+      dt {
+        text-align: left;
+      }
+
+      dd {
+        text-align: right;
+      }
+
       footer {
+        font-size: 0.875rem;
         margin: 8rem auto 4rem;
         text-align: center;
         width: 90vw;
@@ -170,7 +197,7 @@
     <header>
       <h1>Love Night Owl?</h1>
       <h3>
-        Buy Night Owl Swag to Rep Your Favorite Theme + Support a Good Cause!
+        Buy Night Owl Swag to Rep Your Favorite Theme + Support a Great Cause!
       </h3>
       <p>
         Sarah Drasner’s
@@ -199,13 +226,13 @@
           </option>
 
           <option value="price_1HA6ocJxiC8YsQIhJ613rWMi"
-            >Night Owl Shirt</option
+            >Night Owl Shirt $25</option
           >
           <option value="price_1HA6odJxiC8YsQIh4KxoA4vN"
-            >Night Owl Shirt + Extra $25 Donation</option
+            >Night Owl Shirt $25 + Extra $25 Donation</option
           >
           <option value="price_1HA6odJxiC8YsQIhy3FKuTEX"
-            >Night Owl Shirt + Extra $75 Donation</option
+            >Night Owl Shirt $25 + Extra $75 Donation</option
           >
         </select>
 
@@ -234,7 +261,7 @@
         >
         <input type="number" id="quantity" name="quantity" value="1" />
 
-        <button>Purchase</button>
+        <button type="submit">Buy Now</button>
       </form>
 
       <div class="description">
@@ -256,9 +283,24 @@
     <aside class="details">
       <div class="sizing">
         <h3>Sizing for the Flowy Circle Top</h3>
-        <img src="/images/8806-sizing.jpg" alt="Flowy Circle Top Sizing" />
+        <dl>
+          <dt>Small (SM)</dt>
+          <dd>Size 2–4</dd>
+
+          <dt>Medium (MD)</dt>
+          <dd>6–10</dd>
+
+          <dt>Large (LG)</dt>
+          <dd>10–14</dd>
+
+          <dt>Extra Large (XL)</dt>
+          <dd>14–18</dd>
+
+          <dt>Double Extra Large (2X)</dt>
+          <dd>18–20</dd>
+        </dl>
         <p>
-          Details:
+          Product Details:
           <a
             href="https://www.bellacanvas.com/product/8806/Womens-Flowy-Circle-Top.html"
             >Bella+Canvas website</a
@@ -268,9 +310,33 @@
 
       <div class="sizing">
         <h3>Sizing for the T-Shirt</h3>
-        <img src="/images/3001-sizing.jpg" alt="T-Shirt Sizing" />
+        <dl>
+          <dt>Extra Small (XS)</dt>
+          <dd>Chest 31"–34"</dd>
+
+          <dt>Small (SM)</dt>
+          <dd>34"–37"</dd>
+
+          <dt>Medium (MD)</dt>
+          <dd>38"–41"</dd>
+
+          <dt>Large (LG)</dt>
+          <dd>42"–45"</dd>
+
+          <dt>Extra Large (XL)</dt>
+          <dd>46"–49"</dd>
+
+          <dt>Double Extra Large (2X)</dt>
+          <dd>50"–53"</dd>
+
+          <dt>Triple Extra Large (3X)</dt>
+          <dd>54"–57"</dd>
+
+          <dt>Quadruple Extra Large (4X)</dt>
+          <dd>58"–61"</dd>
+        </dl>
         <p>
-          Details:
+          Product Details:
           <a
             href="https://www.bellacanvas.com/product/3001/Unisex-Jersey-Short-Sleeve-Tee.html"
             >Bella+Canvas website</a
@@ -281,7 +347,7 @@
 
     <footer>
       <p>
-        Created with
+        created with
         <img
           src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1596146333/netlify/netliheart.png"
           alt="love"
@@ -291,7 +357,7 @@
           href="https://www.netlify.com/?utm_source=night-owl&utm_medium=footer-jl&utm_campaign=devex"
           >Netlify</a
         >
-        team.
+        team
       </p>
     </footer>
 
