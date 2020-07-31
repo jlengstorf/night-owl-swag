@@ -11,7 +11,7 @@ A few weeks back, we had a discussion about our favorite code editor theme, [@sd
 
 <p align="center">
   <a href="https://twitter.com/jlengstorf/status/1278792407476080640">
-    <img src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1596233759/night-owl/tweet.png" alt="Get Limited Edition Night Owl Swag" />
+    <img src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1596233759/night-owl/tweet.png" alt="Get Limited Edition Night Owl Swag" width="400" />
   </a>
 </p>
 
