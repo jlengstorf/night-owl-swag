@@ -17,7 +17,7 @@ A few weeks back, we had a discussion about our favorite code editor theme, [@sd
 
 Enough people were into it that we decided this should actually happen, so we’re making it happen!
 
-These shirts are up for presale until August 15th. All proceeds will be donated to [Black Girls Code][bgc].
+These shirts are up for presale until August 31st. All proceeds will be donated to [Black Girls Code][bgc].
 
 Grab one while they’re still available to show your love for Sarah’s work _and_ support a great cause!
 
