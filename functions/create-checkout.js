@@ -32,6 +32,7 @@ exports.handler = async ({ body }) => {
         'FI',
         'AU',
         'IN',
+        'AR',
       ],
     },
     line_items: [
