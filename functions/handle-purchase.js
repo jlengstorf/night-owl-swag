@@ -43,7 +43,8 @@ ${country}
 `,
     };
 
-    await mail.send(msg);
+    // uncomment this to send an email when purchases are made
+    // await mail.send(msg);
 
     return {
       statusCode: 200,

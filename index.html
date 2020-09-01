@@ -99,10 +99,21 @@
         width: 90vw;
       }
 
+      .sale-ended,
       main {
         margin: 2rem auto;
         max-width: 700px;
         width: 90vw;
+      }
+
+      .sale-ended {
+        background: rgb(173 219 103 / 0.125);
+        border: 2px solid #addb67;
+        padding: 2rem;
+      }
+
+      .sale-ended h2 {
+        margin-top: 0;
       }
 
       h1 {
@@ -263,6 +274,27 @@
     </style>
   </head>
   <body>
+    <div class="sale-ended">
+      <h2>Heads up! This sale is over.</h2>
+      <p>
+        This site is still up in test mode (meaning you can make
+        <a href="https://stripe.com/docs/testing#cards">test purchases</a> to
+        see how it works, but no money changes hands and no merchandise will be
+        shipped) to demonstrate how a Jamstack-powered sales page can be built.
+        You can
+        <a href="https://github.com/jlengstorf/night-owl-swag"
+          >see the source code on GitHub</a
+        >.
+      </p>
+      <p>
+        The shirts are no longer for sale, but you can still
+        <a
+          href="https://donorbox.org/support-black-girls-code?default_interval=o"
+          >donate to Black Girls Code</a
+        >!
+      </p>
+    </div>
+
     <header>
       <h1>Love Night Owl?</h1>
       <h2>
@@ -297,20 +329,20 @@
             -- choose your contribution --
           </option>
 
-          <option value="price_1HApPqJxiC8YsQIhXFPLxzHB"
-            >Night Owl Shirt $25</option
-          >
-          <option value="price_1HApPqJxiC8YsQIhpFtkGSEu"
-            >Night Owl Shirt $25 + Extra $25 Donation</option
-          >
-          <option value="price_1HApPqJxiC8YsQIhgMflLLh9"
-            >Night Owl Shirt $25 + Extra $75 Donation</option
-          >
+          <option value="price_1HApPqJxiC8YsQIhXFPLxzHB">
+            Night Owl Shirt $25
+          </option>
+          <option value="price_1HApPqJxiC8YsQIhpFtkGSEu">
+            Night Owl Shirt $25 + Extra $25 Donation
+          </option>
+          <option value="price_1HApPqJxiC8YsQIhgMflLLh9">
+            Night Owl Shirt $25 + Extra $75 Donation
+          </option>
         </select>
 
         <label for="size">Choose Your Size</label>
         <select id="size" name="size">
-          <option value="" disabled selected> -- choose a size -- </option>
+          <option value="" disabled selected>-- choose a size --</option>
 
           <option value="6004-sm">SM Slim-Cut Fitted Tee</option>
           <option value="6004-md">MD Slim-Cut Fitted Tee</option>
